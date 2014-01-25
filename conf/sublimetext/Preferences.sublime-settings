@@ -1,0 +1,11 @@
+{
+  // @file
+  //   User Settings File
+  //   OSX Location: ~/Library/Application Support/Sublime Text 3/Packages/User
+
+  "font_size": 18,
+  "ignored_packages":
+  [
+  ],
+  "shift_tab_unindent": true
+}

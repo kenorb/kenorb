@@ -1,0 +1,10 @@
+[
+  // @file
+  //   User Key Bindings
+  //   OSX Location: ~/Library/Application Support/Sublime Text 3/Packages/User
+
+  // Make ctrl+tab only cycle tabs in current group (and in order of appearance)
+  // See: http://sublimetext.userecho.com/topic/30368-make-ctrltab-only-cycle-tabs-in-current-group-and-in-order-of-appearance/
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
+]
