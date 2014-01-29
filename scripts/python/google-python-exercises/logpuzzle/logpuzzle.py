@@ -25,6 +25,20 @@ def read_urls(filename):
   Screens out duplicate urls and returns the urls sorted into
   increasing order."""
   # +++your code here+++
+  # bro(begin solution)
+  lines = []
+  url = 'http://' + filename[filename.index('_')+1:]
+  try:
+    f = open(filename, 'r')
+  except IOError as e:
+    sys.stderr.write("Error! Can't open the file: %s!\n" % filename)
+  else:
+    for line in f:
+      uri = re.search(r'GET \S+', line).group(0)[4:]
+      if "puzzle" in uri:
+        lines.append(url + uri)
+  return sorted(set(lines))
+  # bro(end solution)
   
 
 def download_images(img_urls, dest_dir):
