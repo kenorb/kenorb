@@ -44,6 +44,8 @@ read_buffer_size = 256K
 read_rnd_buffer_size = 1M
 myisam_sort_buffer_size = 8M
 
+open_files_limit=9208
+
 # When making adjustments, make tmp_table_size/max_heap_table_size equal
 tmp_table_size = 16M
 max_heap_table_size = 16M
