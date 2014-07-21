@@ -3,9 +3,29 @@
   //   User Settings File
   //   OSX Location: ~/Library/Application Support/Sublime Text 3/Packages/User
 
+  // Note that the font_face and font_size are overriden in the platform
+  // specific settings file, for example, "Preferences (Linux).sublime-settings".
+  // Because of this, setting them here will have no effect: you must set them
+  // in your User File Preferences.
   "font_size": 18,
+  
+  // List any packages to ignore here. When removing entries from this list,
+  // a restart may be required if the package contains plugins.
   "ignored_packages":
   [
   ],
-  "shift_tab_unindent": true
+  
+  // By default, shift+tab will only unindent if the selection spans
+  // multiple lines. When pressing shift+tab at other times, it'll insert a
+  // tab character - this allows tabs to be inserted when tab_completion is
+  // enabled. Set this to true to make shift+tab always unindent, instead of
+  // inserting tabs.
+  "shift_tab_unindent": true,
+
+  // The number of spaces a tab is considered equal to
+  "tab_size": 2,
+
+  // Set to true to insert spaces when tab is pressed
+  "translate_tabs_to_spaces": true
+
 }
