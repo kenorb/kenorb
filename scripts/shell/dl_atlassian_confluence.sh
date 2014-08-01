@@ -59,6 +59,7 @@ if [ ! -f "cookies.txt" ]; then
   wget -O- --keep-session-cookies --save-cookies $COOKIE --post-data -U $BROWSER "username=$USER&password=$PASS" $URL/login | grep -q "Log Out" \
     && echo "Logged successfully." \
     || (echo "Wrong credentials."; rm -v $COOKIE)
+  exit 1
 fi
 
 # Download feed of all Confluence attachments
