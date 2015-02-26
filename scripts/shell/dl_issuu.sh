@@ -22,6 +22,7 @@ TITLE=$(echo $SRC | grep -o '.og:title. content=.[^"]*' | cut -d \" -f4)
 PAGE1_URL=$(echo $SRC | grep -o 'image.issuu.com/[^"]*' | head -n1)
 
 #[ "$ARG2" = "force" ] || ( mkdir -v "$TITLE" || { echo "File already exists, re-run as: '$0 $URL force' to override."; exit 1; }) # Create new folder.
+test "$TITLE.pdf" && { echo "File '$TITLE' already downloaded."; exit 1; }
 mkdir -v "$TITLE" || echo "Directory already exists, Resuming download..."
 cd "$TITLE"    # Open created or existing folder.
 
