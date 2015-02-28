@@ -18,12 +18,12 @@ URL="$1"
 ARG2="$2"
 
 echo Fetching $URL...
-SRC=$(curl -o- $URL)
-TITLE=$(echo $SRC | grep -o '.og:title. content=.[^"]*' | cut -d \" -f4)
+SRC=$(curl -o- $URL || cat -- $URL) # Retrieve URL or local file.
+TITLE=$(echo $SRC | grep -o '.og:title. content=.[^"]*' | cut -d \" -f4 | tr -cd "[:alnum:][:punct:][:space:]" )
 PAGE1_URL=$(echo $SRC | grep -o 'image.issuu.com/[^"]*' | head -n1)
 
 #[ "$ARG2" = "force" ] || ( mkdir -v "$TITLE" || { echo "File already exists, re-run as: '$0 $URL force' to override."; exit 1; }) # Create new folder.
-test -f "$TITLE.pdf" && { echo "File '$TITLE' already downloaded."; exit 1; }
+test -f "$TITLE.pdf" && { echo "File '$TITLE.pdf' already downloaded."; exit 1; }
 mkdir -v "$TITLE" || echo "Directory already exists, Resuming download..."
 cd "$TITLE"    # Open created or existing folder.
 
@@ -39,8 +39,8 @@ for i in `seq 1 2000`; do
       rm -v "page_$i.jpg" # ... if file is corrupted, remove it and re-download it again.
     fi
   fi
-  IMG_URL=$(echo $PAGE1_URL | sed s/page_1/page_$i/) # Get next image URL.
-  curl -o "page_$i.jpg" $IMG_URL                     # Download each page.
+  IMG_URL=$(echo $PAGE1_URL | sed "s/page_[[:digit:]]*/page_$i/") # Get next image URL.
+  curl --retry 3 -o "page_$i.jpg" $IMG_URL           # Download each page.
   file page_$i.jpg | grep -i JPEG ||                 # Check for file format.
     { rm -v "page_$i.jpg"; break; }                  # If not JPEG file, remove and break the loop.
   FILES="$FILES page_$i.jpg"                         # Add file to the list.
