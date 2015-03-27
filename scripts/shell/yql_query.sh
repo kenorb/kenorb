@@ -9,4 +9,5 @@
 format=${2:-xml}                                  # Read format (default to xml).
 # test -f "$HOME/.yqlrc" && source <(grep = $HOME/.yqlrc)  # Load extra values from ~/.yqlrc if exist.
 url_api="http://query.yahooapis.com/v1/public/yql"
+[ "$3" ] && printf 'Query: %s' "$query"
 curl -G --data-urlencode "q=$query" "$url_api?format=$format" ${@:3}
