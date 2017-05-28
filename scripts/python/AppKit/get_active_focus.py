@@ -9,6 +9,7 @@ print('Active focus: ' + active_app)
 while True:
     time.sleep(1)
     prev_app = active_app
+    print(workspace.activeApplication()['NSApplicationProcessIdentifier'])
     active_app = workspace.activeApplication()['NSApplicationName']
     if prev_app != active_app:
         print('Focus changed to: ' + active_app)
