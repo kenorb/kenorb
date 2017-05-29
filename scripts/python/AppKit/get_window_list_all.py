@@ -5,4 +5,14 @@
 # See: https://stackoverflow.com/q/44232433/55075
 import Quartz
 for window in Quartz.CGWindowListCopyWindowInfo(Quartz.kCGWindowListOptionOnScreenOnly & Quartz.kCGWindowListExcludeDesktopElements, Quartz.kCGNullWindowID):
-    print("%s - %s" % (window['kCGWindowOwnerName'], window.get('kCGWindowName', u'Unknown').encode('ascii','ignore')))
+    print("%s - %s (PID: %d, WID: %d, Pos: %dx%d, Size: %dx%d)"
+        % (
+            window['kCGWindowOwnerName'],
+            window.get('kCGWindowName', u'(empty)').encode('ascii','ignore'),
+            window['kCGWindowOwnerPID'],
+            window['kCGWindowNumber'],
+            window['kCGWindowBounds']['X'],
+            window['kCGWindowBounds']['Y'],
+            window['kCGWindowBounds']['Width'],
+            window['kCGWindowBounds']['Height'],
+            ))
