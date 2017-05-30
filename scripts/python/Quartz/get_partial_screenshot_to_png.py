@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # Gets partial screenshot and saves it into PNG file.
 import Quartz.CoreGraphics as cg
-region = cg.CGRectMake(0, 0, 100, 100) # You can also use cg.CGRectInfinite for the full screen.
+region = cg.CGRectMake(0, 0, 400, 400) # You can also use cg.CGRectInfinite for the full screen.
 image = cg.CGWindowListCreateImage(region, cg.kCGWindowListOptionOnScreenOnly, cg.kCGNullWindowID, cg.kCGWindowImageDefault)
 prov = cg.CGImageGetDataProvider(image)
 img_data = cg.CGDataProviderCopyData(prov)
