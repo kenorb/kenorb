@@ -5,7 +5,7 @@
 # Notes:
 #  - first issue: 2008/07/25
 #
-# Author: Rafal Wieczorek <kenorb>
+# Author: kenorb
 # 
 
 for year in {2008..2013}; do

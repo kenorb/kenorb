@@ -2,7 +2,7 @@
 #
 # Simple script to update Drupal core and contrib projects
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 
 DRUSH="drush -r ../trunk"

@@ -3,7 +3,7 @@
 # Download all files from the Amazon feed
 #
 # @author
-#   Rafal Wieczorek <kenorb>
+#   kenorb
 #
 # Usage:
 #  ./dl_amazon_feed_files.sh http://example.s3.amazonaws.com/

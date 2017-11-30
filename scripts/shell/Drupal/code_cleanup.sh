@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 
 CUSTOM_DIR="../trunk/sites/all/modules/custom"

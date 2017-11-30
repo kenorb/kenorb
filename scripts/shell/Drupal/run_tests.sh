@@ -6,7 +6,7 @@
 #
 # @file run_tests.sh
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 
 # Variables

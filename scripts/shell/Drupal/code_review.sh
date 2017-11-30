@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 
 DRUSH="drush -r ../trunk"

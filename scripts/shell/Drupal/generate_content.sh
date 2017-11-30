@@ -2,7 +2,7 @@
 
 # Shell script to generate random content via drush.
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 # Note:
 #   devel_generate (Devel) module is required.

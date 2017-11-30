@@ -2,7 +2,7 @@
 #
 # Make the backup of Atlassian JIRA and Confluence files
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 # Usage:
 #   ./dl_atlassian_confluence.sh URL (username) (password)

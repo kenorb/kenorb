@@ -2,7 +2,7 @@
 
 # Update/install the current Drupal environment based on the Drupal profile file
 #
-# @author Rafal Wieczorek <kenorb>
+# @author kenorb
 #
 
 # Environmental variables (please change)
